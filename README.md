@@ -36,25 +36,36 @@ Order | Workflow | Complete
 2b | *Use separate file for front-end DOM*: Using at least 2 JavaScript files. use `...-interface.js` | --
 2c | *Refactor by putting program functions into their own Node modules*: Using `exports` keyword. | --
 3 | *Use npm to install necessary tools/packages (from command line):*: Node Package Manager | --
-3a | *Create `manifest` file by running npm from top lvl of project directory*: $ npm init | --
-3b | *Create `gulp` JS package*: $ npm install gulp --save-dev | --
+3a | *Create `package.json` `manifest` file by running npm from top lvl of project directory*: $ npm init | --
+3b | *Create `gulp` JS package for development app and save it to the `package.json` `manifest`*: $ npm install gulp --save-dev | --
+3c | *Download browserify package and save it to the `manifest` under devDependencies*: $ npm install browserify --save-dev | --
 
-4a | *Include gulp tasks to concatenate*: Using gulp. | --
-4b | *Include gulp tasks to minify*: Using gulp. | --
-4c | *Include gulp tasks to browserify*: Using gulp. | --
-4d | *Check the code*: Using JSHint. | --
-4e | *Include a functioning gulpfile with all tasks(concatenate, minify, browserify, and check your code)*: Using ?. | --
-4 | *Create a clean task*: Using ?. | --
-5a | *Create a build task*: Using ?. | --
-5b | *Create a separate build folder for production files*: Using ?. | --
-6 | *Include object declarations in the back-end file*: Using ?. | --
-7 | *Include instances of each object in the front-end file*: Using ?. | --
-8 | *Include manifest file with a list of npm packages*: Using ?. | --
+4 | *Create `.gitignore` file that includes `node_modules/` and `.DS_Store` in top level of the project folder*: Using Atom. | --
+
+5 | *Create Gulpfile in top level of the project and require `gulp`*: gulpfile.js | --
+5 | *Get a new package called `vinyl-source-stream` using npm*: $ npm install vinyl-source-stream --save-dev | --
+5 | *Require both browserify and vinyl-source-stream in the gulpfile.js*: `var ... = require` | --
+5 | *Add task to call the browserify function in the gulpfile*: `gulp.task('jsBrowserify')` | --
+
+
+
+
+5a | *Include gulp tasks to concatenate*: Using gulp. | --
+5b | *Include gulp tasks to minify*: Using gulp. | --
+5c | *Include gulp tasks to browserify*: Using gulp. | --
+5d | *Check the code*: Using JSHint. | --
+5e | *Include a functioning gulpfile with all tasks(concatenate, minify, browserify, and check your code)*: Using ?. | --
+6 | *Create a clean task*: Using ?. | --
+7a | *Create a build task*: Using ?. | --
+7b | *Create a separate build folder for production files*: Using ?. | --
+8 | *Include object declarations in the back-end file*: Using ?. | --
+9 | *Include instances of each object in the front-end file*: Using ?. | --
+10 | *Include manifest file with a list of npm packages*: Using ?. | --
 
 ## Setup/Installation Requirements
 
-* _run $ npm init_
-* _Open a web browser_
+* _Download the repository from GitHub_
+* _run $ npm install to gather the packages the program requires_
 * _Visit web page_
 * _Check out the viewer in multiple screen sizes_
 
