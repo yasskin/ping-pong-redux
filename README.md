@@ -35,17 +35,38 @@ Order | Workflow | Complete
 2a | *Refactor by putting program functions into their own files*: Use additional `.js` files. | --
 2b | *Use separate file for front-end DOM*: Using at least 2 JavaScript files. use `...-interface.js` | --
 2c | *Refactor by putting program functions into their own Node modules*: Using `exports` keyword. | --
-3 | *Use npm to install necessary tools/packages (from command line):*: Node Package Manager | --
+3 | *NPM: Use npm to install necessary tools/packages (from command line):*: Node Package Manager | --
 3a | *Create `package.json` `manifest` file by running npm from top lvl of project directory*: $ npm init | --
 3b | *Create `gulp` JS package for development app and save it to the `package.json` `manifest`*: $ npm install gulp --save-dev | --
 3c | *Download browserify package and save it to the `manifest` under devDependencies*: $ npm install browserify --save-dev | --
+4 | *GITIGNORE: Create `.gitignore` file that includes `node_modules/` and `.DS_Store` in top level of the project folder*: Using Atom. | --
+5 | *GULP: Create Gulpfile in top level of the project and require `gulp`*: gulpfile.js | --
+5a | *Get a new package called `vinyl-source-stream` using npm*: $ npm install vinyl-source-stream --save-dev | --
+5b | *Require both browserify and vinyl-source-stream in the gulpfile.js*: `var ... = require` | --
+5c | *Add task to call the browserify function in the gulpfile*: `gulp.task('jsBrowserify')` | --
+5d | *Run our task command in the terminal to generate the `build` folder*: `$ gulp jsBrowserify` | --
+5e | *Install a new package called `gulp-concat` using npm:* $ npm install gulp-concat --save-dev | --
+5f | *Createa new gulp task using `gulp.src` called `concatInterface` in the gulpfile.js:* gulp.task('concatInterface') ... gulp.src | --
+5g | *Run the new version of our browserify task using gulp:*: $ gulp jsBrowserify | --
+5h | *Shorten the new concatenation gulp.task even more by using a globbing pattern using* ** *(an asterisk... the wildcard symbol)*: Tell the `gulp-concat` package to concatenate and browserify all files inside of our js folder that end in the string "-interface.js". | --
+5i | *Add minification to the end of our JavaScript chain using another package from npm*: $ npm install gulp-uglify --save-dev | --
+5j | *Add a require statement to our `gulpfile.js`:*: js/gulpfile.js
+var uglify = require('gulp-uglify'); | --
+5k | *Run $ gulp minifyScripts (it will run jsBrowserify, which will run concatInterface). See that the printout works in the terminal!*: $ gulp minifyScripts | --
+5l | *ENVIRONMENTAL VARIABLES: install `gulp-util` as a development dependency*: $ npm install gulp-util --save-dev | --
+5m | *Require our new `gulp-util` package at the top of our gulpfile*: gulpfile.js
+var utilities = require('gulp-util'); | --
+5n | *Create an environment variable called production and use it inside of a new gulp task called build*: $gulp build --production | --
+5o | *Add code to gulpfile.js to tell which kind of environment we are using.*: gulpfile.js ... var buildProduction = utilities.env.production; | --
+5p | *Install `del` package, which stands for delete*: $ npm install del --save-dev | --
+5q | *Require it at the top of the gulpfile.js*: var del = require('del'); | --
 
-4 | *Create `.gitignore` file that includes `node_modules/` and `.DS_Store` in top level of the project folder*: Using Atom. | --
 
-5 | *Create Gulpfile in top level of the project and require `gulp`*: gulpfile.js | --
-5 | *Get a new package called `vinyl-source-stream` using npm*: $ npm install vinyl-source-stream --save-dev | --
-5 | *Require both browserify and vinyl-source-stream in the gulpfile.js*: `var ... = require` | --
-5 | *Add task to call the browserify function in the gulpfile*: `gulp.task('jsBrowserify')` | --
+
+And require it at the top of our gulpfile:
+
+gulpfile.js
+var del = require('del');
 
 
 
