@@ -6,6 +6,7 @@ var uglify = require('gulp-uglify');
 var utilities = require('gulp-util')
 var del = require('del');
 var buildProduction = utilities.env.production;
+var jshint = require('gulp-jshint');
 
 gulp.task('concatInterface', function() {
   return gulp.src(['./js/*-interface.js'])
@@ -26,7 +27,11 @@ gulp.task("minifyScripts", ["jsBrowserify"], function(){
     .pipe(gulp.dest("./build/js"));
 });
 
-gulp.task("build", function(){
+gulp.task("clean", function(){
+  return del(['build', 'tmp']);
+});
+
+gulp.task("build", ['clean'], function(){
   if (buildProduction) {
     gulp.start('minifyScripts');
   } else {
@@ -34,6 +39,8 @@ gulp.task("build", function(){
   }
 });
 
-gulp.task("clean", function(){
-  return del(['build', 'tmp']);
+gulp.task('jshint', function(){
+  return gulp.src(['js/*.js'])
+    .pipe(jshint())
+    .pipe(jshint.reporter('default'));
 });

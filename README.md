@@ -58,15 +58,14 @@ var uglify = require('gulp-uglify'); | --
 var utilities = require('gulp-util'); | --
 5n | *Create an environment variable called production and use it inside of a new gulp task called build*: $gulp build --production | --
 5o | *Add code to gulpfile.js to tell which kind of environment we are using.*: gulpfile.js ... var buildProduction = utilities.env.production; | --
-5p | *Install `del` package, which stands for delete*: $ npm install del --save-dev | --
-5q | *Require it at the top of the gulpfile.js*: var del = require('del'); | --
+5p1 | *Install `del` package, which stands for delete*: $ npm install del --save-dev | --
+5p2 | *Require it at the top of the `gulpfile.js`*: var del = require('del'); | --
+5p3 | *Add `gulp.task` at the bottom of `gulpfile.js`*: gulp.task("build", ['clean'], function(){ ... | --
+5q1a | *Install `JSHint` package (a linter) as a devDependency*: $ npm install jshint --save-dev | --
+5q1b | *Install `gulpJSHint` package `gulp-jshint` also*: $ npm install gulp-jshint --save-dev | --
+5q2 | *Add Require Statement it at the top of the `gulpfile.js` (we only need to require the gulp-jshint package)*: var jshint = require('gulp-jshint'); | --
+5q3 | *Add `gulp.task` at the bottom of `gulpfile.js`*: gulp.task("build", ['clean'], function(){ ... | --
 
-
-
-And require it at the top of our gulpfile:
-
-gulpfile.js
-var del = require('del');
 
 
 
