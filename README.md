@@ -35,11 +35,15 @@ Order | Workflow | Complete
 2a | *Refactor by putting program functions into their own files*: Use additional `.js` files. | --
 2b | *Use separate file for front-end DOM*: Using at least 2 JavaScript files. use `...-interface.js` | --
 2c | *Refactor by putting program functions into their own Node modules*: Using `exports` keyword. | --
-3a | *Include gulp tasks to concatenate*: Using JSHint. | --
-3b | *Include gulp tasks to minify*: Using JSHint. | --
-3c | *Include gulp tasks to browserify*: Using JSHint. | --
-3d | *Include gulp tasks to check the code*: Using JSHint. | --
-3e | *Include a functioning gulpfile with all tasks(concatenate, minify, browserify, and check your code)*: Using ?. | --
+3 | *Use npm to install necessary tools/packages (from command line):*: Node Package Manager | --
+3a | *Create `manifest` file by running npm from top lvl of project directory*: $ npm init | --
+3b | *Create `gulp` JS package*: $ npm install gulp --save-dev | --
+
+4a | *Include gulp tasks to concatenate*: Using gulp. | --
+4b | *Include gulp tasks to minify*: Using gulp. | --
+4c | *Include gulp tasks to browserify*: Using gulp. | --
+4d | *Check the code*: Using JSHint. | --
+4e | *Include a functioning gulpfile with all tasks(concatenate, minify, browserify, and check your code)*: Using ?. | --
 4 | *Create a clean task*: Using ?. | --
 5a | *Create a build task*: Using ?. | --
 5b | *Create a separate build folder for production files*: Using ?. | --
@@ -49,7 +53,7 @@ Order | Workflow | Complete
 
 ## Setup/Installation Requirements
 
-* _Establish an internet connection_
+* _run $ npm init_
 * _Open a web browser_
 * _Visit web page_
 * _Check out the viewer in multiple screen sizes_
